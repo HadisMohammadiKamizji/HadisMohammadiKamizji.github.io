@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hadis Mohammadi Kamizji | Doctoral Researcher</title>
+    <style>
+        :root {
+            --primary: #0284c7;
+            --text: #0f172a;
+            --light-bg: #f8fafc;
+            --border: #e2e8f0;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            max-width: 850px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            background: #ffffff;
+        }
+        header {
+            text-align: center;
+            padding-bottom: 35px;
+            border-bottom: 1px solid var(--border);
+        }
+        .profile-img {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 15px;
+            border: 3px solid var(--primary);
+            background: #e2e8f0;
+        }
+        h1 { margin: 10px 0 5px 0; font-size: 2.2rem; font-weight: 700; color: #0f172a; }
+        .tagline { font-size: 1.15rem; color: #475569; margin-bottom: 15px; }
+        .links a {
+            margin: 0 12px;
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 500;
+        }
+        .links a:hover { text-decoration: underline; }
+        section { padding: 35px 0; border-bottom: 1px solid var(--border); }
+        h2 { color: #1e293b; font-size: 1.6rem; margin-bottom: 20px; font-weight: 600; }
+        .card {
+            background: var(--light-bg);
+            padding: 22px;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+            margin-bottom: 20px;
+        }
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 8px;
+        }
+        .card-title { font-weight: 600; font-size: 1.15rem; color: #0f172a; }
+        .badge {
+            background: #e0f2fe;
+            color: var(--primary);
+            padding: 3px 10px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+        .tags { margin-top: 12px; }
+        .tags span {
+            display: inline-block;
+            background: #cbd5e1;
+            color: #334155;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            margin-right: 6px;
+            margin-top: 5px;
+            font-weight: 500;
+        }
+        .btn {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 6px 14px;
+            background: var(--primary);
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+        .btn:hover { background: #0369a1; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <img src="avatar.png" alt="Hadis Mohammadi Kamizji" class="profile-img">
+        <h1>Hadis Mohammadi Kamizji</h1>
+        <p class="tagline">Doctoral Researcher | University of Turku</p>
+        <div class="links">
+            <a href="mailto:your.email@utu.fi">📧 Email</a>
+            <a href="#" target="_blank">🎓 Google Scholar</a>
+            <a href="#" target="_blank">💼 LinkedIn</a>
+        </div>
+    </header>
+
+    <section id="about">
+        <h2>About Me</h2>
+        <p>I am a Doctoral Researcher and PhD student at the University of Turku, conducting research within the Trienkatu lab. My academic work focuses deeply on autonomous systems and robotics, specifically specializing in the joint optimization of mechanical and computational energy efficiency in autonomous electric vehicle swarms. To train and evaluate multi-agent reinforcement learning models, I leverage advanced simulation frameworks such as NVIDIA Isaac Sim and Isaac Lab.</p>
+    </section>
+
+    <section id="publications">
+        <h2>Featured Publications</h2>
+        
+        <div class="card">
+            <div class="card-header">
+                <span class="card-title">Energy-Optimal Path Planning for Mobile Robot with Computation Offloading</span>
+                <span class="badge">2026</span>
+            </div>
+            <p style="margin: 0 0 10px 0; font-style: italic; color: #64748b;">Computers & Industrial Engineering</p>
+            <p style="margin: 0; font-size: 0.95rem; color: #334155;">This research introduces an integrated routing optimization approach combining a customized A* algorithm with an adapted Genetic Algorithm to co-optimize physical motion dynamics and computational resource offloading.</p>
+            <div class="tags">
+                <span>Autonomous Vehicles</span>
+                <span>Path Planning</span>
+                <span>Computation Offloading</span>
+                <span>A* Algorithm</span>
+                <span>Genetic Algorithm</span>
+            </div>
+            <a href="#" class="btn" target="_blank">View Article →</a>
+        </div>
+    </section>
+
+    <section id="experience">
+        <h2>Education & Affiliations</h2>
+        <div class="card">
+            <div class="card-header">
+                <span class="card-title">PhD Candidate / Doctoral Researcher</span>
+                <span class="badge">Active</span>
+            </div>
+            <div style="color: #475569;">University of Turku · Trienkatu Lab</div>
+        </div>
+    </section>
+
+    <footer>
+        <p style="text-align: center; color: #94a3b8; font-size: 0.85rem; margin-top: 40px;">© 2026 Hadis Mohammadi Kamizji</p>
+    </footer>
+
+</body>
+</html>
