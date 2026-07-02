@@ -7,237 +7,365 @@
     <style>
         :root {
             --primary: #0284c7;
-            --text: #0f172a;
-            --light-bg: #f8fafc;
+            --primary-dark: #0369a1;
+            --bg-gradient: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --card-bg: #ffffff;
+            --body-bg: #f8fafc;
             --border: #e2e8f0;
+            --shadow-sm: 0 1px 3px rgba(0,0,0,0.05), 0 1px 2px rgba(0,0,0,0.02);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+            --shadow-lg: 0 10px 15px -3px rgba(2, 132, 199, 0.08), 0 4px 6px -2px rgba(2, 132, 199, 0.04);
         }
+        
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-            line-height: 1.6;
-            color: var(--text);
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.7;
+            color: var(--text-main);
+            background-color: var(--body-bg);
+            padding: 0 0 60px 0;
+        }
+
+        /* Hero Header Section */
+        header {
+            background: var(--bg-gradient);
+            color: white;
+            text-align: center;
+            padding: 60px 20px;
+            box-shadow: var(--shadow-md);
+            position: relative;
+        }
+        
+        .profile-container {
             max-width: 850px;
             margin: 0 auto;
-            padding: 40px 20px;
-            background: #ffffff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
-        header {
-            text-align: center;
-            padding-bottom: 35px;
-            border-bottom: 1px solid var(--border);
-        }
+
         .profile-img {
-            width: 140px;
-            height: 140px;
+            width: 150px;
+            height: 150px;
             border-radius: 50%;
             object-fit: cover;
-            margin-bottom: 15px;
-            border: 3px solid var(--primary);
+            margin-bottom: 20px;
+            border: 4px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
             background: #e2e8f0;
+            transition: transform 0.3s ease;
         }
-        h1 { margin: 10px 0 5px 0; font-size: 2.2rem; font-weight: 700; color: #0f172a; }
-        .tagline { font-size: 1.15rem; color: #475569; margin-bottom: 15px; }
+        
+        .profile-img:hover {
+            transform: scale(1.05);
+        }
+
+        h1 { font-size: 2.5rem; font-weight: 800; letter-spacing: -0.025em; margin-bottom: 8px; color: #ffffff; }
+        .tagline { font-size: 1.25rem; color: #94a3b8; max-width: 600px; font-weight: 400; margin-bottom: 24px; }
+        
+        .links { display: flex; gap: 15px; flex-wrap: wrap; justify-content: center; }
         .links a {
-            margin: 0 12px;
-            color: var(--primary);
+            background: rgba(255, 255, 255, 0.1);
+            color: #ffffff;
+            padding: 8px 18px;
+            border-radius: 50px;
             text-decoration: none;
             font-weight: 500;
+            font-size: 0.95rem;
+            backdrop-filter: blur(4px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.2s ease;
         }
-        .links a:hover { text-decoration: underline; }
-        section { padding: 35px 0; border-bottom: 1px solid var(--border); }
-        h2 { color: #1e293b; font-size: 1.6rem; margin-bottom: 20px; font-weight: 600; }
+        .links a:hover {
+            background: #ffffff;
+            color: #0f172a;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+
+        /* Main Layout Container */
+        .container {
+            max-width: 850px;
+            margin: 40px auto 0 auto;
+            padding: 0 20px;
+        }
+
+        section { padding: 20px 0 40px 0; }
+        
+        h2 { 
+            color: #0f172a; 
+            font-size: 1.75rem; 
+            margin-bottom: 24px; 
+            font-weight: 700; 
+            letter-spacing: -0.02em;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        h2::after {
+            content: '';
+            flex-grow: 1;
+            height: 2px;
+            background: var(--border);
+        }
+
+        p { margin-bottom: 16px; font-size: 1.05rem; color: #334155; }
+
+        /* Highly Graphical Cards */
         .card {
-            background: var(--light-bg);
-            padding: 22px;
-            border-radius: 8px;
+            background: var(--card-bg);
+            padding: 28px;
+            border-radius: 12px;
             border: 1px solid var(--border);
-            margin-bottom: 20px;
+            margin-bottom: 24px;
+            box-shadow: var(--shadow-sm);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
+        
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+            border-color: #bae6fd;
+        }
+        
+        /* Award Winning Card Special Graphic Styling */
+        .award-card {
+            border-left: 5px solid #eab308 !important;
+            background: linear-gradient(to right, #fefce8, #ffffff) !important;
+            box-shadow: 0 4px 20px rgba(234, 179, 8, 0.08) !important;
+        }
+        .award-card:hover {
+            border-color: #eab308 !important;
+            box-shadow: 0 10px 25px rgba(234, 179, 8, 0.15) !important;
+        }
+
         .card-header {
             display: flex;
             justify-content: space-between;
             align-items: flex-start;
-            margin-bottom: 8px;
+            gap: 20px;
+            margin-bottom: 12px;
         }
-        .card-title { font-weight: 600; font-size: 1.15rem; color: #0f172a; }
+        
+        .card-title { font-weight: 700; font-size: 1.3rem; color: #0f172a; line-height: 1.4; }
+        
         .badge {
             background: #e0f2fe;
             color: var(--primary);
-            padding: 3px 10px;
-            border-radius: 4px;
-            font-size: 0.8rem;
-            font-weight: 600;
+            padding: 4px 12px;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            white-space: nowrap;
         }
-        .tags { margin-top: 12px; }
+        
+        .award-badge {
+            background: #fef08a;
+            color: #854d0e;
+        }
+        
+        .authors { font-size: 0.95rem; color: #475569; margin-bottom: 12px; }
+        .authors strong { color: #0f172a; }
+        
+        .venue { font-style: italic; color: var(--primary); font-weight: 600; margin-bottom: 12px; font-size: 1rem; }
+        .award-venue { color: #ca8a04; }
+
+        .abstract { font-size: 0.95rem; color: #475569; line-height: 1.6; }
+
+        /* Modern Tags System */
+        .tags { margin-top: 20px; display: flex; flex-wrap: wrap; gap: 8px; }
         .tags span {
             display: inline-block;
-            background: #cbd5e1;
-            color: #334155;
-            padding: 2px 8px;
-            border-radius: 4px;
+            background: #f1f5f9;
+            color: #475569;
+            padding: 4px 12px;
+            border-radius: 20px;
             font-size: 0.8rem;
-            margin-right: 6px;
-            margin-top: 5px;
-            font-weight: 500;
+            font-weight: 600;
+            border: 1px solid #e2e8f0;
+            transition: all 0.2s ease;
         }
-        .btn {
-            display: inline-block;
-            margin-top: 15px;
-            padding: 6px 14px;
-            background: var(--primary);
-            color: white;
-            text-decoration: none;
-            border-radius: 4px;
+        .card:hover .tags span {
+            background: #e2e8f0;
+            color: #1e293b;
+        }
+        
+        .award-card .tags span {
+            background: #fef9c3;
+            color: #713f12;
+            border-color: #fef08a;
+        }
+
+        footer {
+            text-align: center;
+            color: var(--text-muted);
             font-size: 0.9rem;
-            font-weight: 500;
+            margin-top: 60px;
+            padding-top: 20px;
+            border-top: 1px solid var(--border);
         }
-        .btn:hover { background: #0369a1; }
     </style>
 </head>
 <body>
 
     <header>
-        <img src="avatar.jpg" alt="Hadis Mohammadi Kamizji" class="profile-img">
-        <h1>Hadis Mohammadi Kamizji</h1>
-        <p class="tagline">Doctoral Researcher | University of Turku</p>
-        <div class="links">
-            <a href="mailto:hmokam@utu.fi">📧 Email</a>
-            <a href="#" target="_blank">🎓 Google Scholar</a>
-            <a href="#" target="_blank">💼 LinkedIn</a>
+        <div class="profile-container">
+            <img src="avatar.jpg" alt="Hadis Mohammadi Kamizji" class="profile-img">
+            <h1>Hadis Mohammadi Kamizji</h1>
+            <p class="tagline">Doctoral Researcher & PhD Student | University of Turku</p>
+            <div class="links">
+                <a href="mailto:hmokam@utu.fi">📧 Email</a>
+                <a href="#" target="_blank">🎓 Google Scholar</a>
+                <a href="#" target="_blank">💼 LinkedIn</a>
+            </div>
         </div>
     </header>
 
-    <section id="about">
-        <h2>About Me</h2>
-        <p>I am a Doctoral Researcher and PhD student at the University of Turku, conducting research within the ASL lab. My academic work centers on autonomous systems and robotics, with a specialized focus on the <strong>holistic energy optimization of swarm mobile robots</strong>.</p>
-        
-        <p>My research addresses the critical challenge of sustainability in electric vehicle swarms by developing integrated co-optimization frameworks. Rather than looking at components in isolation, my models account for the entire ecosystem of energy consumption—balancing <strong>mechanical propulsion dynamics, real-time computational overhead (CPU/GPU workloads), and wireless communication energy models</strong>. Furthermore, to ensure long-term operational viability, our framework explicitly integrates <strong>battery health and aging characteristics (State-of-Health uncertainty)</strong> into the fleet routing and optimization loops.</p>
-    
-    </section>
+    <div class="container">
 
-   <section id="publications">
-        <h2>Featured Publications</h2>
-        
-        <div class="card">
-            <div class="card-header">
-                <span class="card-title">Joint Optimization of Mechanical and Computational Energy in Collaborative Autonomous Electric Vehicles Routing</span>
-                <span class="badge">2026</span>
-            </div>
-            <p style="margin: 0 0 10px 0; font-style: italic; color: #64748b;">IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)</p>
-            <p style="margin: 0; font-size: 0.95rem; color: #334155;"><strong>H. Mohammadi</strong>, A. Zarei, A. Nourian, J. Plosila, H. Haghbayan</p>
-            <div class="tags">
-                <span>Collaborative Autonomous EVs</span>
-                <span>Mechanical & Computational Energy</span>
-                <span>Joint Optimization</span>
-                <span>Accepted</span>
-            </div>
-        </div>
+        <section id="about">
+            <h2>About Me</h2>
+            <p>I am a Doctoral Researcher and PhD student at the University of Turku, conducting research within the Trienkatu lab. My academic work centers on autonomous systems and robotics, with a specialized focus on the <strong>holistic energy optimization of swarm mobile robots</strong>.</p>
+            
+            <p>My research addresses the critical challenge of sustainability in electric vehicle swarms by developing integrated co-optimization frameworks. Rather than looking at components in isolation, my models account for the entire ecosystem of energy consumption—balancing <strong>mechanical propulsion dynamics, real-time computational overhead (CPU/GPU workloads), and wireless communication energy models</strong>. Furthermore, to ensure long-term operational viability, our framework explicitly integrates <strong>battery health and aging characteristics (State-of-Health uncertainty)</strong> into the fleet routing and optimization loops.</p>
+            
+            <p>To train, validate, and scale these complex multi-agent reinforcement learning (MARL) models and evolutionary algorithms, I leverage advanced simulation environments including NVIDIA Isaac Sim and Isaac Lab alongside real-time hardware profiling setups.</p>
+        </section>
 
-        <div class="card" style="border-left: 4px solid #eab308; background: #fefce8;">
-            <div class="card-header">
-                <span class="card-title" style="color: #854d0e;">🏆 Integrated Modeling and Simulation of Mechanical, Computational, Communication, and Battery in Robots</span>
-                <span class="badge" style="background: #fef08a; color: #854d0e;">2026</span>
+        <section id="publications">
+            <h2>Featured Publications</h2>
+            
+            <div class="card">
+                <div class="card-header">
+                    <span class="card-title">Joint Optimization of Mechanical and Computational Energy in Collaborative Autonomous Electric Vehicles Routing</span>
+                    <span class="badge">2026</span>
+                </div>
+                <div class="venue">IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)</div>
+                <div class="authors"><strong>H. Mohammadi</strong>, A. Zarei, A. Nourian, J. Plosila, H. Haghbayan</div>
+                <p class="abstract">Submitted and accepted at IROS 2026, this work explores collaborative vehicle mechanics and multi-robot scheduling constraints.</p>
+                <div class="tags">
+                    <span>Collaborative Autonomous EVs</span>
+                    <span>Mechanical & Computational Energy</span>
+                    <span>Joint Optimization</span>
+                    <span>Accepted</span>
+                </div>
             </div>
-            <p style="margin: 0 0 10px 0; font-style: italic; color: #713f12;">European Conference on Modelling and Simulation (ECMS)</p>
-            <p style="margin: 0; font-size: 0.95rem; color: #713f12;"><strong>H. Mohammadi</strong>, E. Immonen, J. Plosila, H. Haghbayan</p>
-            <p style="margin: 8px 0 0 0; font-size: 0.9rem; font-weight: bold; color: #ca8a04;">🥇 Winner of the Best Paper Award</p>
-            <div class="tags">
-                <span>Integrated Simulation</span>
-                <span>Battery & Communication Modeling</span>
-                <span>Robotics</span>
-                <span>Best Paper Award</span>
-            </div>
-        </div>
 
-        <div class="card">
-            <div class="card-header">
-                <span class="card-title">Energy-Optimal Path Planning for Mobile Robots with Computation Offloading</span>
-                <span class="badge">2026</span>
+            <div class="card award-card">
+                <div class="card-header">
+                    <span class="card-title" style="color: #713f12;">🏆 Integrated Modeling and Simulation of Mechanical, Computational, Communication, and Battery in Robots</span>
+                    <span class="badge award-badge">2026</span>
+                </div>
+                <div class="venue award-venue">European Conference on Modelling and Simulation (ECMS)</div>
+                <div class="authors" style="color: #713f12;"><strong>H. Mohammadi</strong>, E. Immonen, J. Plosila, H. Haghbayan</div>
+                <p class="abstract" style="color: #854d0e; font-weight: 600; margin-bottom: 4px;">🥇 Winner of the Best Paper Award</p>
+                <p class="abstract" style="color: #7c2d12;">Presents an end-to-end framework capturing simulation fidelity across computing elements, physical drag physics, and localized network performance metrics.</p>
+                <div class="tags">
+                    <span>Integrated Simulation</span>
+                    <span>Battery & Communication Modeling</span>
+                    <span>Robotics</span>
+                    <span>Best Paper Award</span>
+                </div>
             </div>
-            <p style="margin: 0 0 10px 0; font-style: italic; color: #64748b;">International Conference on Control, Robotics and Engineering (ICCRE)</p>
-            <p style="margin: 0; font-size: 0.95rem; color: #334155;"><strong>H. Mohammadi</strong>, A. Zarei, J. Plosila, H. Haghbayan</p>
-            <div class="tags">
-                <span>Path Planning</span>
-                <span>Computation Offloading</span>
-                <span>Mobile Robots</span>
-                <span>Accepted</span>
-            </div>
-        </div>
 
-        <div class="card">
-            <div class="card-header">
-                <span class="card-title">Hybrid Evolutionary Optimization for Electric Vehicle Routing under Battery State-of-Health Uncertainty</span>
-                <span class="badge">2026</span>
+            <div class="card">
+                <div class="card-header">
+                    <span class="card-title">Energy-Optimal Path Planning for Mobile Robots with Computation Offloading</span>
+                    <span class="badge">2026</span>
+                </div>
+                <div class="venue">International Conference on Control, Robotics and Engineering (ICCRE)</div>
+                <div class="authors"><strong>H. Mohammadi</strong>, A. Zarei, J. Plosila, H. Haghbayan</div>
+                <p class="abstract">Investigates a customized A* routing framework integrated with an adapted Genetic Algorithm to co-optimize motion trajectories alongside computing handoffs.</p>
+                <div class="tags">
+                    <span>Path Planning</span>
+                    <span>Computation Offloading</span>
+                    <span>Mobile Robots</span>
+                    <span>Accepted</span>
+                </div>
             </div>
-            <p style="margin: 0 0 10px 0; font-style: italic; color: #64748b;">European Control Conference (ECC)</p>
-            <p style="margin: 0; font-size: 0.95rem; color: #334155;"><strong>H. Mohammadi</strong>, E. Immonen, J. Plosila, H. Haghbayan</p>
-            <div class="tags">
-                <span>Evolutionary Optimization</span>
-                <span>EV Routing</span>
-                <span>Battery State-of-Health</span>
-                <span>Accepted</span>
+
+            <div class="card">
+                <div class="card-header">
+                    <span class="card-title">Hybrid Evolutionary Optimization for Electric Vehicle Routing under Battery State-of-Health Uncertainty</span>
+                    <span class="badge">2026</span>
+                </div>
+                <div class="venue">European Control Conference (ECC)</div>
+                <div class="authors"><strong>H. Mohammadi</strong>, E. Immonen, J. Plosila, H. Haghbayan</div>
+                <p class="abstract">Focuses on mitigating predictive errors in electric fleet routing by layering evolutionary search logic against dynamic battery degradation dynamics.</p>
+                <div class="tags">
+                    <span>Evolutionary Optimization</span>
+                    <span>EV Routing</span>
+                    <span>Battery State-of-Health</span>
+                    <span>Accepted</span>
+                </div>
             </div>
-        </div>
 
-        <div class="card">
-            <div class="card-header">
-                <span class="card-title">Aging-aware Fleet Management for the Electric Vehicle Routing Problem</span>
-                <span class="badge">2025</span>
+            <div class="card">
+                <div class="card-header">
+                    <span class="card-title">Aging-aware Fleet Management for the Electric Vehicle Routing Problem</span>
+                    <span class="badge">2025</span>
+                </div>
+                <div class="venue">Computers & Industrial Engineering, Elsevier</div>
+                <div class="authors"><strong>H. Mohammadi</strong>, E. Immonen, M. Heydarzadeh, J. Plosila, H. Haghbayan</div>
+                <p class="abstract">Addresses deep long-term structural wear profiles within large-scale delivery models using lithium-ion aging mechanics linked to runtime route planning.</p>
+                <div class="tags">
+                    <span>Fleet Management</span>
+                    <span>EV Routing</span>
+                    <span>Aging-aware</span>
+                    <span>Published</span>
+                </div>
             </div>
-            <p style="margin: 0 0 10px 0; font-style: italic; color: #64748b;">Computers & Industrial Engineering, Elsevier</p>
-            <p style="margin: 0; font-size: 0.95rem; color: #334155;"><strong>H. Mohammadi</strong>, E. Immonen, M. Heydarzadeh, J. Plosila, H. Haghbayan</p>
-            <div class="tags">
-                <span>Fleet Management</span>
-                <span>EV Routing</span>
-                <span>Aging-aware</span>
-                <span>Published</span>
+
+        </section>
+
+        <section id="experience">
+            <h2>Work Experience</h2>
+            
+            <div class="card">
+                <div class="card-header">
+                    <span class="card-title">Doctoral Researcher (PhD Student)</span>
+                    <span class="badge">Feb 2026 - Present</span>
+                </div>
+                <div style="color: var(--primary); font-weight: 600; margin-bottom: 8px;">University of Turku</div>
+                <p class="abstract">Trienkatu Lab / Autonomous Systems Laboratory (ASL). Researching multi-layered mechanical, chip-level computational, and environment communication energy profiles for autonomous robotic configurations.</p>
             </div>
-        </div>
 
-    </section>
-
-    <section id="experience">
-        <h2>Work Experience</h2>
-        
-        <div class="card">
-            <div class="card-header">
-                <span class="card-title">Doctoral Researcher (PhD Student)</span>
-                <span class="badge">Feb 2026 - Present</span>
+            <div class="card">
+                <div class="card-header">
+                    <span class="card-title">Project Researcher / Engineer</span>
+                    <span class="badge">Mar 2024 - Jul 2025</span>
+                </div>
+                <div style="color: var(--primary); font-weight: 600; margin-bottom: 8px;">Turku University of Applied Sciences (Turku AMK)</div>
+                <p class="abstract">Executed applied engineering prototyping, simulation asset construction, and localized physical hardware optimization validation tasks.</p>
             </div>
-            <div style="color: #475569; font-weight: 500;">University of Turku</div>
-            <p style="margin: 5px 0 0 0; font-size: 0.95rem; color: #334155;">Autonomous Systems Laboratory (ASL).</p>
-        </div>
 
-        <div class="card">
-            <div class="card-header">
-                <span class="card-title">Senior Researcher</span>
-                <span class="badge">Mar 2024 - Jul 2025</span>
+            <h2>Education</h2>
+
+            <div class="card">
+                <div class="card-header">
+                    <span class="card-title">M.Sc. in Hardware Engineering</span>
+                    <span class="badge">Graduated</span>
+                </div>
+                <div style="color: #475569; font-weight: 500;">University of Isfahan</div>
             </div>
-            <div style="color: #475569; font-weight: 500;">Turku University of Applied Sciences (Turku AMK)</div>
-            <p style="margin: 5px 0 0 0; font-size: 0.95rem; color: #334155;"</p>
-        </div>
 
-        <h2>Education</h2>
-
-        <div class="card">
-            <div class="card-header">
-                <span class="card-title">M.Sc. in Hardware Engineering</span>
-                <span class="badge">Graduated</span>
+            <div class="card">
+                <div class="card-header">
+                    <span class="card-title">B.Sc. in Software Engineering</span>
+                    <span class="badge">Graduated</span>
+                </div>
+                <div style="color: #475569; font-weight: 500;">University of Isfahan</div>
             </div>
-            <div style="color: #475569; font-weight: 500;">University of Isfahan</div>
-        </div>
+        </section>
 
-        <div class="card">
-            <div class="card-header">
-                <span class="card-title">B.Sc. in Software Engineering</span>
-                <span class="badge">Graduated</span>
-            </div>
-            <div style="color: #475569; font-weight: 500;">University of Isfahan</div>
-        </div>
-    </section>
-
-    <footer>
-        <p style="text-align: center; color: #94a3b8; font-size: 0.85rem; margin-top: 40px;">© 2026 Hadis Mohammadi Kamizji</p>
-    </footer>
+        <footer>
+            <p>© 2026 Hadis Mohammadi Kamizji</p>
+        </footer>
+    </div>
 
 </body>
 </html>
