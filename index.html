@@ -6,216 +6,290 @@
     <title>Hadis Mohammadi Kamizji | Doctoral Researcher</title>
     <style>
         :root {
-            --bg-main: #0b0f19;
-            --bg-card: #131a2c;
+            --bg-main: #060913;
+            --bg-card: #0f1626;
+            --bg-card-hover: #141d32;
             --neon-pink: #ff007f;
             --neon-cyan: #00f2fe;
+            --neon-cyan-dim: rgba(0, 242, 254, 0.15);
             --neon-gold: #ffbd59;
+            --neon-gold-dim: rgba(255, 189, 89, 0.15);
             --text-heading: #ffffff;
-            --text-body: #94a3b8;
-            --border-glow: linear-gradient(135deg, var(--neon-cyan) 0%, var(--neon-pink) 100%);
+            --text-body: #cbd5e1;
+            --text-muted: #64748b;
+            
+            /* Enhanced professional typography scaling */
+            --fs-h1: 3rem;
+            --fs-h2: 2rem;
+            --fs-title: 1.45rem;
+            --fs-body: 1.15rem;
+            --fs-meta: 1rem;
         }
         
         * { box-sizing: border-box; margin: 0; padding: 0; }
         
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-            line-height: 1.7;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.75;
             color: var(--text-body);
             background-color: var(--bg-main);
-            padding: 40px 20px 80px 20px;
+            /* Soft professional background graphic glow */
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(0, 242, 254, 0.04) 0%, transparent 40%),
+                radial-gradient(circle at 90% 80%, rgba(255, 0, 127, 0.03) 0%, transparent 40%);
+            background-attachment: fixed;
+            padding: 60px 24px 100px 24px;
+            -webkit-font-smoothing: antialiased;
         }
 
         .container {
-            max-width: 850px;
+            max-width: 900px;
             margin: 0 auto;
         }
 
-        /* Hero Profile Box with Neon Glow */
+        /* Professional Hero Panel with Subtle Mesh Design */
         header {
             background: var(--bg-card);
-            border-radius: 20px;
-            padding: 50px 30px;
+            border-radius: 24px;
+            padding: 60px 40px;
             text-align: center;
-            margin-bottom: 40px;
+            margin-bottom: 50px;
             position: relative;
             border: 1px solid rgba(255, 255, 255, 0.05);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+            overflow: hidden;
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; height: 3px;
+            background: linear-gradient(90deg, var(--neon-cyan), var(--neon-pink));
         }
         
-        /* Neon Ring for Profile Picture */
+        /* High-End Technical Ring for Profile Picture */
         .img-wrapper {
-            width: 156px;
-            height: 156px;
+            width: 164px;
+            height: 164px;
             border-radius: 50%;
-            margin: 0 auto 24px auto;
+            margin: 0 auto 28px auto;
             display: flex;
             align-items: center;
             justify-content: center;
-            background: linear-gradient(180deg, var(--neon-cyan), var(--neon-pink));
-            box-shadow: 0 0 20px rgba(0, 242, 254, 0.4), 0 0 40px rgba(255, 0, 127, 0.2);
+            background: linear-gradient(135deg, var(--neon-cyan) 0%, var(--neon-pink) 100%);
+            box-shadow: 0 0 30px rgba(0, 242, 254, 0.25);
+            padding: 4px;
         }
 
         .profile-img {
-            width: 148px;
-            height: 148px;
+            width: 100%;
+            height: 100%;
             border-radius: 50%;
             object-fit: cover;
             background: #1e293b;
+            border: 4px solid var(--bg-card);
         }
 
         h1 { 
-            font-size: 2.6rem; 
+            font-size: var(--fs-h1); 
             font-weight: 800; 
             color: var(--text-heading); 
-            margin-bottom: 12px;
+            margin-bottom: 14px;
             letter-spacing: -0.02em;
+            line-height: 1.2;
         }
         
         .tagline { 
-            font-size: 1.2rem; 
+            font-size: 1.25rem; 
             color: var(--neon-cyan); 
-            font-weight: 600; 
-            margin-bottom: 30px;
+            font-weight: 700; 
+            margin-bottom: 35px;
             text-transform: uppercase;
-            letter-spacing: 0.05em;
+            letter-spacing: 0.08em;
         }
         
-        /* Interactive Pill Buttons */
-        .links { display: flex; gap: 15px; flex-wrap: wrap; justify-content: center; }
+        /* Interactive Buttons with Premium UI Feedbacks */
+        .links { display: flex; gap: 16px; flex-wrap: wrap; justify-content: center; }
         .links a {
             color: #ffffff;
-            padding: 10px 22px;
-            border-radius: 50px;
+            padding: 12px 26px;
+            border-radius: 12px;
             text-decoration: none;
             font-weight: 600;
-            font-size: 0.95rem;
-            background: transparent;
-            border: 2px solid var(--neon-cyan);
-            box-shadow: 0 0 10px rgba(0, 242, 254, 0.1);
-            transition: all 0.3s ease;
+            font-size: var(--fs-meta);
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(0, 242, 254, 0.4);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
         }
         .links a:hover {
-            background: linear-gradient(135deg, var(--neon-cyan), #00b4d8);
-            color: var(--bg-main);
-            transform: translateY(-3px);
-            box-shadow: 0 0 20px rgba(0, 242, 254, 0.4);
-            border-color: transparent;
+            background: rgba(0, 242, 254, 0.08);
+            border-color: var(--neon-cyan);
+            transform: translateY(-2px);
+            box-shadow: 0 0 20px rgba(0, 242, 254, 0.25);
         }
 
-        /* Section Headings with Gradient Text */
-        section { padding: 30px 0; }
+        /* Section Headers with Technical Line Indicator */
+        section { padding: 35px 0; }
         
         h2 { 
-            font-size: 1.8rem; 
-            margin-bottom: 28px; 
+            font-size: var(--fs-h2); 
+            margin-bottom: 32px; 
             font-weight: 800; 
-            letter-spacing: -0.02em;
-            color: #ffffff;
+            letter-spacing: -0.01em;
+            color: var(--text-heading);
             display: flex;
             align-items: center;
-            gap: 15px;
+            gap: 20px;
         }
         
         h2::after {
             content: '';
             flex-grow: 1;
             height: 1px;
-            background: rgba(255, 255, 255, 0.1);
+            background: linear-gradient(90deg, rgba(255, 255, 255, 0.15), transparent);
         }
 
-        p { margin-bottom: 18px; font-size: 1.05rem; color: var(--text-body); }
-        strong { color: #ffffff; }
+        p { margin-bottom: 20px; font-size: var(--fs-body); color: var(--text-body); }
+        strong { color: #ffffff; font-weight: 600; }
 
-        /* Modern Cyberpunk Cards */
+        /* Structural Grid Cards with Premium Borders */
         .card {
             background: var(--bg-card);
-            padding: 32px;
-            border-radius: 16px;
-            margin-bottom: 28px;
-            border: 1px solid rgba(255, 255, 255, 0.03);
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            padding: 36px;
+            border-radius: 18px;
+            margin-bottom: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.04);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
             position: relative;
+            overflow: hidden;
+        }
+        
+        .card::before {
+            content: '';
+            position: absolute;
+            left: 0; top: 0; bottom: 0;
+            width: 4px;
+            background: transparent;
+            transition: all 0.3s ease;
         }
         
         .card:hover {
-            transform: translateY(-5px);
-            border-color: rgba(0, 242, 254, 0.4);
-            box-shadow: 0 10px 30px rgba(0, 242, 254, 0.15);
+            transform: translateY(-4px) scale(1.01);
+            background: var(--bg-card-hover);
+            border-color: rgba(0, 242, 254, 0.25);
+            box-shadow: 0 16px 36px rgba(0, 242, 254, 0.08);
         }
         
-        /* Award Card - Rich Gold Neon Glow */
+        .card:hover::before {
+            background: var(--neon-cyan);
+        }
+        
+        /* Highlighting Best Paper Award Card */
         .award-card {
-            border: 1px solid rgba(234, 179, 8, 0.3) !important;
-            box-shadow: 0 4px 25px rgba(234, 179, 8, 0.05) !important;
+            border: 1px solid rgba(255, 189, 89, 0.25) !important;
+            box-shadow: 0 8px 28px rgba(255, 189, 89, 0.04) !important;
+        }
+        .award-card::before {
+            background: rgba(255, 189, 89, 0.4);
         }
         .award-card:hover {
             border-color: var(--neon-gold) !important;
-            box-shadow: 0 12px 35px rgba(234, 179, 8, 0.2) !important;
+            box-shadow: 0 16px 40px rgba(255, 189, 89, 0.12) !important;
+        }
+        .award-card:hover::before {
+            background: var(--neon-gold);
         }
 
         .card-header {
             display: flex;
             justify-content: space-between;
             align-items: flex-start;
-            gap: 20px;
-            margin-bottom: 14px;
+            gap: 24px;
+            margin-bottom: 16px;
         }
         
-        .card-title { font-weight: 700; font-size: 1.35rem; color: #ffffff; line-height: 1.4; }
+        .card-title { font-weight: 700; font-size: var(--fs-title); color: #ffffff; line-height: 1.4; }
         .card-title-award { color: var(--neon-gold); }
         
+        /* Micro-badge Components */
         .badge {
-            background: rgba(0, 242, 254, 0.1);
+            background: var(--neon-cyan-dim);
             color: var(--neon-cyan);
-            padding: 5px 14px;
+            padding: 6px 16px;
             border-radius: 8px;
             font-size: 0.85rem;
             font-weight: 700;
             border: 1px solid rgba(0, 242, 254, 0.2);
             white-space: nowrap;
+            letter-spacing: 0.05em;
         }
         
         .award-badge {
-            background: rgba(255, 189, 89, 0.1);
+            background: var(--neon-gold-dim);
             color: var(--neon-gold);
-            border: 1px solid rgba(255, 189, 89, 0.2);
+            border: 1px solid rgba(255, 189, 89, 0.3);
         }
         
-        .venue { color: var(--neon-pink); font-weight: 700; margin-bottom: 12px; font-size: 1.05rem; letter-spacing: 0.02em; }
+        .venue { color: var(--neon-pink); font-weight: 700; margin-bottom: 14px; font-size: var(--fs-meta); letter-spacing: 0.02em; text-transform: uppercase; }
         .award-venue { color: var(--neon-gold); }
-        .authors { font-size: 0.95rem; color: #cbd5e1; margin-bottom: 14px; }
+        .authors { font-size: var(--fs-body); color: #cbd5e1; margin-bottom: 16px; }
 
-        .abstract { font-size: 0.98rem; color: var(--text-body); }
+        .abstract { font-size: var(--fs-body); color: var(--text-body); line-height: 1.6; }
 
-        /* Sleek Technical Tags */
-        .tags { margin-top: 24px; display: flex; flex-wrap: wrap; gap: 8px; }
+        /* Professional Technical Pill Tags */
+        .tags { margin-top: 28px; display: flex; flex-wrap: wrap; gap: 10px; }
         .tags span {
             display: inline-block;
-            background: rgba(255, 255, 255, 0.04);
+            background: rgba(255, 255, 255, 0.03);
             color: #94a3b8;
-            padding: 4px 14px;
-            border-radius: 20px;
-            font-size: 0.8rem;
+            padding: 5px 16px;
+            border-radius: 8px;
+            font-size: 0.85rem;
             font-weight: 600;
-            border: 1px solid rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            transition: all 0.2s ease;
         }
         .card:hover .tags span {
-            border-color: rgba(0, 242, 254, 0.2);
-            color: #e2e8f0;
+            border-color: rgba(0, 242, 254, 0.15);
+            color: #f1f5f9;
+            background: rgba(0, 242, 254, 0.02);
         }
         .award-card .tags span {
-            border-color: rgba(255, 189, 89, 0.2);
+            border-color: rgba(255, 189, 89, 0.15);
+        }
+        .award-card:hover .tags span {
+            border-color: rgba(255, 189, 89, 0.3);
+            color: #fffbeb;
+            background: rgba(255, 189, 89, 0.02);
         }
 
         footer {
             text-align: center;
-            color: #475569;
-            font-size: 0.9rem;
-            margin-top: 60px;
-            padding-top: 30px;
+            color: var(--text-muted);
+            font-size: var(--fs-meta);
+            margin-top: 80px;
+            padding-top: 40px;
             border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        /* Mobile Screen Optimization */
+        @media (max-width: 768px) {
+            body { padding: 30px 16px 60px 16px; }
+            :root {
+                --fs-h1: 2.2rem;
+                --fs-h2: 1.6rem;
+                --fs-title: 1.25rem;
+                --fs-body: 1.05rem;
+            }
+            header { padding: 40px 20px; }
+            .card { padding: 24px; }
+            .card-header { flex-direction: column-reverse; gap: 12px; }
+            .badge { align-self: flex-start; }
         }
     </style>
 </head>
@@ -238,8 +312,6 @@
         <section id="about">
             <h2>About Me</h2>
             <p>I am a doctoral researcher in the Autonomous Systems Laboratory at the University of Turku, working on energy-aware optimization for autonomous electric vehicles (AEVs) and mobile robot fleets. My research jointly models mechanical propulsion energy, onboard computational energy (perception, localization, and planning), and battery degradation, and uses evolutionary algorithms combined with customized path-search methods to optimize routing, motion parameters, and compute settings for individual robots and multi-vehicle swarms.</p>
-            
-            
         </section>
 
         <section id="publications">
